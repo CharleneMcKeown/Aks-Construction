@@ -1,0 +1,30 @@
+name: Create Cluster from Issues Form Options
+
+on:
+  issues:
+    types: [opened]
+
+
+jobs:
+  extract_issue_data:
+    name: Extract issue data
+    if: contains(github.event.issue.labels.*.name, 'deploy')
+
+    runs-on: ubuntu-latest
+
+    outputs:
+      runner_payload: ${{ steps.issue_payload.outputs.payload }}
+
+    steps:
+    - name: Extract Issue Payload data
+      id: issue_payload 
+      uses: peter-murray/issue-forms-body-parser@v1.1.0
+      with:
+        separator: '###'
+        issue_id: ${{ github.event.issue.number }}
+        label_marker_start: ' '
+        label_marker_end: ':'
+        
+    - name: Show parsed data JSON
+      run: |
+        echo "${{ steps.issue_payload.outputs.payload }}"

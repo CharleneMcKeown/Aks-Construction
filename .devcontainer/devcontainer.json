@@ -31,6 +31,7 @@
 	// "postCreateCommand": "uname -a",
 
 	"postStartCommand": "cd helper && npm install",
+	"postCreateCommand": "curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash",
 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
