@@ -7,7 +7,7 @@ assignees:
 
 body: 
 - type: checkboxes
-  id: Operations Principles
+  id: OperationsPrinciples
   attributes:
     label: 'Which type of cluster do you want to deploy:'
     description: Select one. Refer to documentation (link) for guidance.
@@ -17,7 +17,7 @@ body:
         - label: 'I want a managed environment'
 
 - type: checkboxes
-  id: Security Principles
+  id: SecurityPrinciples
   attributes:
     label: 'Which Security Principles would you like to apply:'
     description: Select one. Refer to documentation (link) for guidance.
@@ -27,7 +27,7 @@ body:
         - label: 'Private cluster with isolating network controls'
 
 - type: input
-  id: Cluster Name
+  id: ClusterName
   attributes:
     label: 'Cluster Name:'
     description: Pick your Cluster name.
@@ -36,7 +36,7 @@ body:
     required: true
 
 - type: input
-  id: Resource Group Name
+  id: ResourceGroupName
   attributes:
     label: 'Resource Group Name:'
     description: Pick your Resource Group name.
@@ -45,7 +45,7 @@ body:
     required: true
 
 - type: input
-  id: Kubernetes Version
+  id: KubernetesVersion
   attributes:
     label: 'Kubernetes Version:'
     description: Pick a Kubernetes Version.
